@@ -26,18 +26,23 @@
     
 #pragma mark - 创建几个子控制器
     HMLoginController *loginVc = [[HMLoginController alloc] init];
-    HMListController *listVc = [[HMListController alloc] init];
-    HMAddController *addVc = [[HMAddController alloc] init];
-    HMEditController *editVc = [[HMEditController alloc] init];
+//    HMListController *listVc = [[HMListController alloc] init];
+//    HMAddController *addVc = [[HMAddController alloc] init];
+//    HMEditController *editVc = [[HMEditController alloc] init];
+    //设置子控制器的颜色
+    loginVc.view.backgroundColor = [UIColor whiteColor];
+//    addVc.view.backgroundColor = [UIColor whiteColor];
+//    editVc.view.backgroundColor = [UIColor whiteColor];
     
-    //2.创建导航控制器
-    UINavigationController *naVc = [[UINavigationController alloc] init];
+    //2.创建导航控制器,同时指定其根控制器为登录控制器
+    UINavigationController *naVc = [[UINavigationController alloc] initWithRootViewController:loginVc];
+    
     
 #pragma mark - 管理子控制器
-    [naVc pushViewController:loginVc animated:YES];
-    [naVc pushViewController:listVc animated:YES];
-    [naVc pushViewController:addVc animated:YES];
-    [naVc pushViewController:editVc animated:YES];
+  //  [naVc pushViewController:loginVc animated:YES];
+//    [naVc pushViewController:listVc animated:YES];
+//    [naVc pushViewController:addVc animated:YES];
+//    [naVc pushViewController:editVc animated:YES];
     
     //3.将导航控制器设置为窗口的根控制器
     self.window.rootViewController = naVc;

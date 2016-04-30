@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  微信电话本(纯代码版)
+//
+//  Created by mac on 16/5/1.
+//  Copyright © 2016年 itheima. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+#import "MBProgressHUD.h"
+
+#ifdef DEBUG
+
+#define HMLog(...) NSLog(__VA_ARGS__) // 替换系统的打印
+
+#else
+
+#define HMLog(...)        // 如果是发布版本,保证不报错
+
+#endif
+
+#endif /* PrefixHeader_pch */

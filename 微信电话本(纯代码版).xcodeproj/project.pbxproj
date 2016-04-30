@@ -15,6 +15,18 @@
 		04204D4E1CD5226F00F744CD /* HMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D4D1CD5226F00F744CD /* HMListController.m */; };
 		04204D511CD5228F00F744CD /* HMAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D501CD5228F00F744CD /* HMAddController.m */; };
 		04204D541CD522A100F744CD /* HMEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D531CD522A100F744CD /* HMEditController.m */; };
+		04204D6F1CD5315600F744CD /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D571CD5315600F744CD /* MASCompositeConstraint.m */; };
+		04204D701CD5315600F744CD /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D5A1CD5315600F744CD /* MASConstraint.m */; };
+		04204D711CD5315600F744CD /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D5C1CD5315600F744CD /* MASConstraintMaker.m */; };
+		04204D721CD5315600F744CD /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D5E1CD5315600F744CD /* MASLayoutConstraint.m */; };
+		04204D731CD5315600F744CD /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D621CD5315600F744CD /* MASViewAttribute.m */; };
+		04204D741CD5315600F744CD /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D641CD5315600F744CD /* MASViewConstraint.m */; };
+		04204D751CD5315600F744CD /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D661CD5315600F744CD /* NSArray+MASAdditions.m */; };
+		04204D761CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D691CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		04204D771CD5315600F744CD /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D6B1CD5315600F744CD /* View+MASAdditions.m */; };
+		04204D781CD5315600F744CD /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D6E1CD5315600F744CD /* ViewController+MASAdditions.m */; };
+		04204D7F1CD533F600F744CD /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04204D7C1CD533F600F744CD /* MBProgressHUD.bundle */; };
+		04204D801CD533F600F744CD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D7E1CD533F600F744CD /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +45,35 @@
 		04204D501CD5228F00F744CD /* HMAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddController.m; sourceTree = "<group>"; };
 		04204D521CD522A100F744CD /* HMEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEditController.h; sourceTree = "<group>"; };
 		04204D531CD522A100F744CD /* HMEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEditController.m; sourceTree = "<group>"; };
+		04204D561CD5315600F744CD /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		04204D571CD5315600F744CD /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		04204D581CD5315600F744CD /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		04204D591CD5315600F744CD /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		04204D5A1CD5315600F744CD /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		04204D5B1CD5315600F744CD /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		04204D5C1CD5315600F744CD /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		04204D5D1CD5315600F744CD /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		04204D5E1CD5315600F744CD /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		04204D5F1CD5315600F744CD /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		04204D601CD5315600F744CD /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		04204D611CD5315600F744CD /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		04204D621CD5315600F744CD /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		04204D631CD5315600F744CD /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		04204D641CD5315600F744CD /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		04204D651CD5315600F744CD /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		04204D661CD5315600F744CD /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		04204D671CD5315600F744CD /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		04204D681CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		04204D691CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		04204D6A1CD5315600F744CD /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		04204D6B1CD5315600F744CD /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		04204D6C1CD5315600F744CD /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		04204D6D1CD5315600F744CD /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		04204D6E1CD5315600F744CD /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		04204D791CD5318200F744CD /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		04204D7C1CD533F600F744CD /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		04204D7D1CD533F600F744CD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		04204D7E1CD533F600F744CD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +106,9 @@
 		04204D301CD5204400F744CD /* 微信电话本(纯代码版) */ = {
 			isa = PBXGroup;
 			children = (
+				04204D811CD5343E00F744CD /* Lib */,
 				04204D481CD521EF00F744CD /* Controller */,
-				04204D341CD5204400F744CD /* AppDelegate.h */,
-				04204D351CD5204400F744CD /* AppDelegate.m */,
-				04204D3D1CD5204400F744CD /* Assets.xcassets */,
-				04204D3F1CD5204400F744CD /* LaunchScreen.storyboard */,
-				04204D421CD5204400F744CD /* Info.plist */,
+				04204D7A1CD5319B00F744CD /* Other */,
 				04204D311CD5204400F744CD /* Supporting Files */,
 			);
 			path = "微信电话本(纯代码版)";
@@ -79,6 +117,10 @@
 		04204D311CD5204400F744CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04204D3D1CD5204400F744CD /* Assets.xcassets */,
+				04204D3F1CD5204400F744CD /* LaunchScreen.storyboard */,
+				04204D421CD5204400F744CD /* Info.plist */,
+				04204D791CD5318200F744CD /* PrefixHeader.pch */,
 				04204D321CD5204400F744CD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -97,6 +139,66 @@
 				04204D531CD522A100F744CD /* HMEditController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		04204D551CD5315600F744CD /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				04204D561CD5315600F744CD /* MASCompositeConstraint.h */,
+				04204D571CD5315600F744CD /* MASCompositeConstraint.m */,
+				04204D581CD5315600F744CD /* MASConstraint+Private.h */,
+				04204D591CD5315600F744CD /* MASConstraint.h */,
+				04204D5A1CD5315600F744CD /* MASConstraint.m */,
+				04204D5B1CD5315600F744CD /* MASConstraintMaker.h */,
+				04204D5C1CD5315600F744CD /* MASConstraintMaker.m */,
+				04204D5D1CD5315600F744CD /* MASLayoutConstraint.h */,
+				04204D5E1CD5315600F744CD /* MASLayoutConstraint.m */,
+				04204D5F1CD5315600F744CD /* Masonry.h */,
+				04204D601CD5315600F744CD /* MASUtilities.h */,
+				04204D611CD5315600F744CD /* MASViewAttribute.h */,
+				04204D621CD5315600F744CD /* MASViewAttribute.m */,
+				04204D631CD5315600F744CD /* MASViewConstraint.h */,
+				04204D641CD5315600F744CD /* MASViewConstraint.m */,
+				04204D651CD5315600F744CD /* NSArray+MASAdditions.h */,
+				04204D661CD5315600F744CD /* NSArray+MASAdditions.m */,
+				04204D671CD5315600F744CD /* NSArray+MASShorthandAdditions.h */,
+				04204D681CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.h */,
+				04204D691CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.m */,
+				04204D6A1CD5315600F744CD /* View+MASAdditions.h */,
+				04204D6B1CD5315600F744CD /* View+MASAdditions.m */,
+				04204D6C1CD5315600F744CD /* View+MASShorthandAdditions.h */,
+				04204D6D1CD5315600F744CD /* ViewController+MASAdditions.h */,
+				04204D6E1CD5315600F744CD /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		04204D7A1CD5319B00F744CD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				04204D341CD5204400F744CD /* AppDelegate.h */,
+				04204D351CD5204400F744CD /* AppDelegate.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		04204D7B1CD533F600F744CD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				04204D7C1CD533F600F744CD /* MBProgressHUD.bundle */,
+				04204D7D1CD533F600F744CD /* MBProgressHUD.h */,
+				04204D7E1CD533F600F744CD /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		04204D811CD5343E00F744CD /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				04204D7B1CD533F600F744CD /* MBProgressHUD */,
+				04204D551CD5315600F744CD /* Masonry */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +260,7 @@
 			files = (
 				04204D411CD5204400F744CD /* LaunchScreen.storyboard in Resources */,
 				04204D3E1CD5204400F744CD /* Assets.xcassets in Resources */,
+				04204D7F1CD533F600F744CD /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,9 +271,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04204D701CD5315600F744CD /* MASConstraint.m in Sources */,
+				04204D731CD5315600F744CD /* MASViewAttribute.m in Sources */,
+				04204D781CD5315600F744CD /* ViewController+MASAdditions.m in Sources */,
+				04204D751CD5315600F744CD /* NSArray+MASAdditions.m in Sources */,
 				04204D541CD522A100F744CD /* HMEditController.m in Sources */,
+				04204D741CD5315600F744CD /* MASViewConstraint.m in Sources */,
+				04204D721CD5315600F744CD /* MASLayoutConstraint.m in Sources */,
+				04204D801CD533F600F744CD /* MBProgressHUD.m in Sources */,
 				04204D361CD5204400F744CD /* AppDelegate.m in Sources */,
 				04204D331CD5204400F744CD /* main.m in Sources */,
+				04204D771CD5315600F744CD /* View+MASAdditions.m in Sources */,
+				04204D6F1CD5315600F744CD /* MASCompositeConstraint.m in Sources */,
+				04204D761CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				04204D711CD5315600F744CD /* MASConstraintMaker.m in Sources */,
 				04204D4E1CD5226F00F744CD /* HMListController.m in Sources */,
 				04204D511CD5228F00F744CD /* HMAddController.m in Sources */,
 				04204D4B1CD5224300F744CD /* HMLoginController.m in Sources */,
@@ -277,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "./微信电话本(纯代码版)/PrefixHeader.pch";
 				INFOPLIST_FILE = "微信电话本(纯代码版)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itheima.-----------";
@@ -288,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "./微信电话本(纯代码版)/PrefixHeader.pch";
 				INFOPLIST_FILE = "微信电话本(纯代码版)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itheima.-----------";

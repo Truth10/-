@@ -12,6 +12,10 @@
 #import "Masonry.h"
 #import "MBProgressHUD.h"
 
+//宏定义
+#define HM_NAME @"HM_NAME"//联系人姓名
+
+#define HM_PHONENUM @"HM_PHONENUM"//电话
 #ifdef DEBUG
 
 #define HMLog(...) NSLog(__VA_ARGS__) // 替换系统的打印

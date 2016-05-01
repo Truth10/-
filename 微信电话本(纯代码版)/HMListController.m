@@ -7,9 +7,11 @@
 //
 
 #import "HMListController.h"
-
+#import "HMContact.h"
+#import "HMListCell.h"
 @interface HMListController ()
 
+@property (nonatomic,strong) NSMutableArray *contactArrM;
 @end
 
 @implementation HMListController
@@ -19,12 +21,18 @@
     
     [self setUpUI];
     
+    //MARK: - 删除多余的cell
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    //MARK: - 删除系统自带的分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
 }
 
 #pragma mark - 搭建界面
 - (void)setUpUI{
     //MARK: - 创建带头部标题的导航条
-
+    
     self.navigationItem.title = @"微信通讯录";
     //MARK: - 注销按钮
     UIBarButtonItem *cancelBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style: UIBarButtonItemStylePlain target:self action:@selector(cancelBtnItemClick)];
@@ -41,8 +49,26 @@
 
 #pragma mark - 注销按钮的点击事件
 - (void)cancelBtnItemClick{
+    //1.创建UIAlertController控制器
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确定退出吗?" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    //2.创建按钮
+    //创建注销按钮
+    UIAlertAction *logOutBtn = [UIAlertAction actionWithTitle:@"注销" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        //返回到登陆控制器
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+    //创建取消按钮
+    UIAlertAction *cancelBtn = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     
     
+    //3.将按钮添加到控制器
+    [alertC addAction:logOutBtn];
+    [alertC addAction:cancelBtn];
+    
+    //4.显示控制器
+    [self presentViewController:alertC animated:YES completion:nil];
 }
 
 
@@ -53,37 +79,100 @@
 
 
 #pragma mark - trash按钮的点击事件
+//MARK: - 显示减号
 - (void)trashBtnItemClick{
+    //显示减号
+     self.tableView.editing = !self.tableView.isEditing;
+
+}
+//MARK: - 实现此代理方法,即可实现向左滑动,显示delete按钮
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    //1.从集合中删除对应的联系人
+    [self.contactArrM removeObjectAtIndex:indexPath.row];
     
+    //2.刷新列表
+    [self.tableView reloadData];
+    
+#pragma mark - 3.删除数据的时候,保存一下
+    [self saveContacts];
+}
+
+
+//MARK: - 修改向左滑动后,右侧显示的删除按钮的title
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+#pragma mark - 保存用户数据的方法
+- (void)saveContacts{
+    //1.获取文件路径
+    NSString *filePath = [self filePathWithName:@"contacts.plist"];
+    
+    //2.保存
+    [NSKeyedArchiver archiveRootObject:self.contactArrM toFile:filePath];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//MARK: - 返回存储文件路径的方法
+- (NSString *)filePathWithName:(NSString *)fileName {
+    
+    // 1.doc的路径
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+    // 2.拼接文件路径并返回
+    return [docPath stringByAppendingPathComponent:fileName];
 }
 
-#pragma mark - Table view data source
-
+#pragma mark - tableView数据源方法
+//MARK: - 返回组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    
+    return 1;
 }
-
+//MARK: - 返回行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    return self.contactArrM.count;
 }
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
+#pragma mark - tableView代理方法
+//MARK: - 返回每一组每一行都是什么内容
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //1.创建cell
+    HMListCell *cell = [HMListCell cellWithTableView:tableView];
+    //2.设置数据
+    cell.contact = self.contactArrM[indexPath.row];
+    //3.返回cell
+    return cell;
+}
+
+#pragma mark - 懒加载模型数组
+- (NSMutableArray *)contactArrM{
+    if (_contactArrM == nil) {
+        _contactArrM = [NSMutableArray array];
+        
+        //1.创建模型
+        HMContact *contact = [HMContact contactWithName:@"姚明" andPhoneNumber:@"13828282828"];
+        HMContact *contact1 = [HMContact contactWithName:@"刘翔" andPhoneNumber:@"15858585858"];
+        //2.添加到模型数组中
+        [_contactArrM addObject:contact];
+        [_contactArrM addObject:contact1];
+        //
+        //        //MARK: - 读取数据
+        //        //1.获取文件路径
+        //        NSString *filePath = [self filePathWithName:@"contacts.plist"];
+        //
+        //        //2.读取数据
+        //        _contactArrM = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        //
+        //        //MARK: - 避免数组为空
+        //        if (_contactArrM == nil) {
+        //            _contactArrM = [NSMutableArray array];
+        
+    }
+    
+    return _contactArrM;
+}
 
 /*
  // Override to support conditional editing of the table view.

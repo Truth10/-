@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0413BAB41CD5ECC30092640B /* HMContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413BAB31CD5ECC30092640B /* HMContact.m */; };
+		0413BAB81CD5F0E50092640B /* HMListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413BAB71CD5F0E50092640B /* HMListCell.m */; };
 		04204D331CD5204400F744CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D321CD5204400F744CD /* main.m */; };
 		04204D361CD5204400F744CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04204D351CD5204400F744CD /* AppDelegate.m */; };
 		04204D3E1CD5204400F744CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04204D3D1CD5204400F744CD /* Assets.xcassets */; };
@@ -30,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0413BAB21CD5ECC30092640B /* HMContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMContact.h; sourceTree = "<group>"; };
+		0413BAB31CD5ECC30092640B /* HMContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMContact.m; sourceTree = "<group>"; };
+		0413BAB61CD5F0E50092640B /* HMListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMListCell.h; sourceTree = "<group>"; };
+		0413BAB71CD5F0E50092640B /* HMListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMListCell.m; sourceTree = "<group>"; };
 		04204D2E1CD5204400F744CD /* 微信电话本(纯代码版).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微信电话本(纯代码版).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04204D321CD5204400F744CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04204D341CD5204400F744CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,28 +93,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0413BAAF1CD5DE090092640B /* View */ = {
+		0413BAB11CD5DE3F0092640B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0413BAB51CD5EDAD0092640B /* Model */,
+				0413BAB91CD5F0EB0092640B /* View */,
+				04204D481CD521EF00F744CD /* Controller */,
 			);
-			name = View;
+			name = Classes;
 			sourceTree = "<group>";
 		};
-		0413BAB01CD5DE100092640B /* Model */ = {
+		0413BAB51CD5EDAD0092640B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0413BAB21CD5ECC30092640B /* HMContact.h */,
+				0413BAB31CD5ECC30092640B /* HMContact.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		0413BAB11CD5DE3F0092640B /* Classes */ = {
+		0413BAB91CD5F0EB0092640B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0413BAB01CD5DE100092640B /* Model */,
-				0413BAAF1CD5DE090092640B /* View */,
-				04204D481CD521EF00F744CD /* Controller */,
+				0413BAB61CD5F0E50092640B /* HMListCell.h */,
+				0413BAB71CD5F0E50092640B /* HMListCell.m */,
 			);
-			name = Classes;
+			name = View;
 			sourceTree = "<group>";
 		};
 		04204D251CD5204300F744CD = {
@@ -306,9 +316,11 @@
 				04204D361CD5204400F744CD /* AppDelegate.m in Sources */,
 				04204D331CD5204400F744CD /* main.m in Sources */,
 				04204D771CD5315600F744CD /* View+MASAdditions.m in Sources */,
+				0413BAB41CD5ECC30092640B /* HMContact.m in Sources */,
 				04204D6F1CD5315600F744CD /* MASCompositeConstraint.m in Sources */,
 				04204D761CD5315600F744CD /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				04204D711CD5315600F744CD /* MASConstraintMaker.m in Sources */,
+				0413BAB81CD5F0E50092640B /* HMListCell.m in Sources */,
 				04204D4E1CD5226F00F744CD /* HMListController.m in Sources */,
 				04204D511CD5228F00F744CD /* HMAddController.m in Sources */,
 				04204D4B1CD5224300F744CD /* HMLoginController.m in Sources */,

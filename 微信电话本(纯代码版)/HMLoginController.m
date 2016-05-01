@@ -33,6 +33,8 @@
 }
 #pragma mark - 设置界面
 - (void)setUpUI{
+    self.navigationItem.title = @"欢迎使用微信电话本";//标题
+    
     //用户名文本框
     UITextField *nameField = [[UITextField alloc] init];
     nameField.placeholder = @"请输入用户名";
@@ -58,7 +60,7 @@
     autoLoginLbl.text = @"自动登录";
     [self.view addSubview:autoLoginLbl];
     self.autoLoginLbl = autoLoginLbl;
-
+    
     //记住密码开关
     UISwitch *remSwitch = [[UISwitch alloc] init];
     [self.view addSubview:remSwitch];
@@ -71,15 +73,63 @@
     
     //登录按钮
     UIButton *loginBtn = [[UIButton alloc] init];
+    [loginBtn setTitle:@"登  录" forState:UIControlStateNormal];
+    loginBtn.backgroundColor = [UIColor blueColor];
+    //loginBtn.
     [self.view addSubview:loginBtn];
     self.loginBtn = loginBtn;
+   // loginBtn.enabled = NO;//默认按钮不能点击
     
-
+    
 }
 
 #pragma mark - 设置约束
 - (void)setUpConstraints{
-
-
+    //用户名文本框
+    [self.nameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20);
+        make.top.equalTo(self.view).offset(124);
+        make.right.equalTo(self.view).offset(-20);
+    }];
+    
+    //密码文本框
+    [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.nameField);
+        make.top.equalTo(self.nameField.mas_bottom).offset(30);
+    }];
+    
+    //记住密码标签
+    [self.remLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.passwordField);
+        make.top.equalTo(self.passwordField.mas_bottom).offset(30);
+    }];
+    
+    //记住密码开关
+    [self.remSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.remLbl.mas_right).offset(20);
+        make.centerY.equalTo(self.remLbl);
+    }];
+    
+    //自动登录开关
+    [self.autoLoginSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.nameField);//右侧与文本框对齐
+        make.centerY.equalTo(self.remLbl);//与记住密码标签垂直中心对齐
+    }];
+    
+    //自动登录标签
+    [self.autoLoginLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.autoLoginSwitch.mas_left).offset(-20);//自动登录标签右部x等于自动登录开关左侧x-20
+        make.centerY.equalTo(self.remLbl);//与记住密码标签垂直中心对齐
+    }];
+    
+    //登录按钮
+    [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.passwordField.mas_bottom).offset(90);//顶部等于密码文本框底部+90
+        make.left.right.equalTo(self.nameField);//左右两侧与用户名文本框对齐
+    
+    }];
+    
 }
+
+
 @end

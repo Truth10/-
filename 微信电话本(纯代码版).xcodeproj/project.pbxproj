@@ -87,6 +87,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0413BAAF1CD5DE090092640B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0413BAB01CD5DE100092640B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0413BAB11CD5DE3F0092640B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0413BAB01CD5DE100092640B /* Model */,
+				0413BAAF1CD5DE090092640B /* View */,
+				04204D481CD521EF00F744CD /* Controller */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		04204D251CD5204300F744CD = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				04204D811CD5343E00F744CD /* Lib */,
-				04204D481CD521EF00F744CD /* Controller */,
 				04204D7A1CD5319B00F744CD /* Other */,
+				0413BAB11CD5DE3F0092640B /* Classes */,
 				04204D311CD5204400F744CD /* Supporting Files */,
 			);
 			path = "微信电话本(纯代码版)";
@@ -391,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PREFIX_HEADER = "./微信电话本(纯代码版)/PrefixHeader.pch";
 				INFOPLIST_FILE = "微信电话本(纯代码版)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -403,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PREFIX_HEADER = "./微信电话本(纯代码版)/PrefixHeader.pch";
 				INFOPLIST_FILE = "微信电话本(纯代码版)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -430,6 +456,7 @@
 				04204D471CD5204400F744CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

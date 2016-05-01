@@ -10,6 +10,7 @@
 #import "HMContact.h"
 #import "HMListCell.h"
 #import "HMAddController.h"
+#import "HMEditController.h"
 @interface HMListController ()
 
 @property (nonatomic,strong) NSMutableArray *contactArrM;
@@ -29,6 +30,33 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
+
+#pragma mark - 当选中某一行cell的时候,跳转到编辑VC
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //1.创建编辑VC
+    HMEditController *editVc = [[HMEditController alloc] init];
+    
+    //2.把当前cell的数据模型赋值给编辑VC的模型属性
+    editVc.contact = self.contactArrM[indexPath.row];
+    //给编辑VC设置背景颜色
+    editVc.view.backgroundColor = [UIColor whiteColor];
+    
+    HMLog(@"%@",editVc.contact);
+    //3.跳转到编辑VC
+    [self.navigationController pushViewController:editVc animated:YES];
+    
+    editVc.endEditBlock = ^(HMEditController *editVc){
+        //刷新表格
+        [self.tableView reloadData];
+    
+    };
+    
+    
+#pragma mark - 编辑的时候存储一下
+    [self saveContacts];
+    
+}
+
 
 #pragma mark - 搭建界面
 - (void)setUpUI{

@@ -38,6 +38,8 @@
     
     //设置辅助视图
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    //创建下划线
+    [cell setUpseparateLine];
     //4.返回cell
     return cell;
     

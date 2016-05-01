@@ -9,6 +9,7 @@
 #import "HMListController.h"
 #import "HMContact.h"
 #import "HMListCell.h"
+#import "HMAddController.h"
 @interface HMListController ()
 
 @property (nonatomic,strong) NSMutableArray *contactArrM;
@@ -34,6 +35,7 @@
     //MARK: - 创建带头部标题的导航条
     
     self.navigationItem.title = @"微信通讯录";
+    self.navigationItem.backBarButtonItem.title = @"返回";
     //MARK: - 注销按钮
     UIBarButtonItem *cancelBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style: UIBarButtonItemStylePlain target:self action:@selector(cancelBtnItemClick)];
     self.navigationItem.leftBarButtonItem = cancelBtnItem;
@@ -74,7 +76,31 @@
 
 #pragma mark - 添加按钮的点击事件
 - (void)addBtnItemClick{
+    //MARK: - 跳转到添加VC
+    //1.创建添加VC
+    HMAddController *addVc = [[HMAddController alloc] init];
+    //1.1设置控制器视图的背景颜色
+    addVc.view.backgroundColor = [UIColor whiteColor];
     
+    //MARK: - 给Block类型的变量赋值
+    addVc.addContactBlock = ^(HMAddController *addVc,HMContact *contact){
+        // 1.将传进来的模型添加到模型数组中
+        [self.contactArrM addObject:contact];
+        
+        //2.获取最后一行cell的索引
+        NSIndexPath *path = [NSIndexPath indexPathForItem:(self.contactArrM.count - 1) inSection:0];
+        
+        //3.直接刷新最后一行cell
+        [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+        
+#pragma mark - 1.添加数据的时候,存储一下
+        [self saveContacts];
+        
+    };
+    
+    
+    //2.跳转到添加VC
+    [self.navigationController pushViewController:addVc animated:YES];
 }
 
 
@@ -82,8 +108,8 @@
 //MARK: - 显示减号
 - (void)trashBtnItemClick{
     //显示减号
-     self.tableView.editing = !self.tableView.isEditing;
-
+    self.tableView.editing = !self.tableView.isEditing;
+    
 }
 //MARK: - 实现此代理方法,即可实现向左滑动,显示delete按钮
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -149,31 +175,31 @@
 #pragma mark - 懒加载模型数组
 - (NSMutableArray *)contactArrM{
     if (_contactArrM == nil) {
-        _contactArrM = [NSMutableArray array];
+        //        _contactArrM = [NSMutableArray array];
+        //
+        //        //1.创建模型
+        //        HMContact *contact = [HMContact contactWithName:@"姚明" andPhoneNumber:@"13828282828"];
+        //        HMContact *contact1 = [HMContact contactWithName:@"刘翔" andPhoneNumber:@"15858585858"];
+        //        //2.添加到模型数组中
+        //        [_contactArrM addObject:contact];
+        //        [_contactArrM addObject:contact1];
         
-        //1.创建模型
-        HMContact *contact = [HMContact contactWithName:@"姚明" andPhoneNumber:@"13828282828"];
-        HMContact *contact1 = [HMContact contactWithName:@"刘翔" andPhoneNumber:@"15858585858"];
-        //2.添加到模型数组中
-        [_contactArrM addObject:contact];
-        [_contactArrM addObject:contact1];
-        //
-        //        //MARK: - 读取数据
-        //        //1.获取文件路径
-        //        NSString *filePath = [self filePathWithName:@"contacts.plist"];
-        //
-        //        //2.读取数据
-        //        _contactArrM = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-        //
-        //        //MARK: - 避免数组为空
-        //        if (_contactArrM == nil) {
-        //            _contactArrM = [NSMutableArray array];
+        //MARK: - 读取数据
+        //1.获取文件路径
+        NSString *filePath = [self filePathWithName:@"contacts.plist"];
+        
+        //2.读取数据
+        _contactArrM = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        
+        //MARK: - 避免数组为空
+        if (_contactArrM == nil) {
+            _contactArrM = [NSMutableArray array];
+            
+        }
         
     }
-    
     return _contactArrM;
 }
-
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

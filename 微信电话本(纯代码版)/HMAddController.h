@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HMAddController,HMContact;
+
+#pragma mark - 1.定义block
+typedef void (^addBlock)(HMAddController *addVc,HMContact *contact);
 
 @interface HMAddController : UIViewController
+
+#pragma mark - 2.定义block属性
+@property (nonatomic,copy) addBlock addContactBlock;
 
 @end

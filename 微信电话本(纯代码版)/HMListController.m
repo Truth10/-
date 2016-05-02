@@ -63,7 +63,8 @@
     //MARK: - 创建带头部标题的导航条
     
     self.navigationItem.title = @"微信通讯录";
-    self.navigationItem.backBarButtonItem.title = @"返回";
+    //创建返回按钮
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     //MARK: - 注销按钮
     UIBarButtonItem *cancelBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style: UIBarButtonItemStylePlain target:self action:@selector(cancelBtnItemClick)];
     self.navigationItem.leftBarButtonItem = cancelBtnItem;
